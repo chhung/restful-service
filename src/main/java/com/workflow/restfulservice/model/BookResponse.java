@@ -1,24 +1,26 @@
 package com.workflow.restfulservice.model;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class BookResponse<T> {
-    private LocalDateTime time;
+    private String timestamp;
     private Integer status;
     private String message;
     private List<T> data;
-
+    private static DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
+    
     public BookResponse() {
-        time = LocalDateTime.now();
+        timestamp = LocalDateTime.now().format(formatter);
     }
     
-    public LocalDateTime getTime() {
-        return time;
+    public String getTime() {
+        return timestamp;
     }
 
-    public BookResponse<T> setTime(LocalDateTime time) {
-        this.time = time;
+    public BookResponse<T> setTime(String time) {
+        this.timestamp = time;
         return this;
     }
 

@@ -1,17 +1,15 @@
 package com.workflow.restfulservice.model;
 
-import java.time.LocalDateTime;
-
 public class BookRequest {
-    private LocalDateTime time;
+    private String timestamp;
     private Book condition;
-
-    public LocalDateTime getTime() {
-        return time;
+    
+    public String getTime() {
+        return timestamp;
     }
 
-    public void setTime(LocalDateTime time) {
-        this.time = time;
+    public void setTime(String time) {
+        this.timestamp = time;
     }
 
     public Book getCondition() {
